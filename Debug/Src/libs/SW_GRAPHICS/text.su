@@ -1,0 +1,9 @@
+text.c:26:6:graphic_set_string	0	static
+text.c:189:10:graphic_puts_RAM	104	static
+text.c:217:6:graphic_clear_last_text	40	static
+text.c:239:10:graphic_puts_int_RAM	56	static
+text.c:257:6:graphic_puts_hex_RAM	64	static
+text.c:286:6:rtc_puts_int_RAM	72	static
+text.c:353:6:TEXT_display_number	56	static
+text.c:363:6:TEXT_display_float	64	static
+text.c:373:6:TEXT_display_string	32	static

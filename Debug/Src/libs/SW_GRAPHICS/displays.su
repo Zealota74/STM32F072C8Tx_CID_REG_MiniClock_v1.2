@@ -1,0 +1,7 @@
+displays.c:18:6:graphic_draw_H_line_RAM	32	static
+displays.c:36:6:graphic_draw_V_line_RAM	32	static
+displays.c:54:6:graphic_fill_rectangle_RAM	40	static
+displays.c:63:6:graphic_draw_rectangle_RAM	40	static
+displays.c:74:6:graphic_fill_circle	72	static
+displays.c:113:6:graphic_color_test	48	static
+displays.c:156:6:graphic_floatingLine_test	24	static

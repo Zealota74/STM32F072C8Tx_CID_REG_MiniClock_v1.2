@@ -1,0 +1,7 @@
+gpio.c:162:29:gpio_pin_LO	16	static
+gpio.c:165:29:gpio_pin_HI	16	static
+gpio.c:177:29:gpio_pin_XOR	16	static
+gpio.c:181:6:gpio_pin_IMPULSES	0	static
+gpio.c:14:6:gpio_pin_cfg	24	static
+gpio.c:53:6:sw_pin_setup	0	static
+gpio.c:132:6:RCC_gpio_init	0	static

@@ -1,0 +1,7 @@
+ds3231.c:50:6:ds3231_init	8	static
+ds3231.c:64:6:ds3231_get_datetime	8	static
+ds3231.c:41:6:EXTI2_3_IRQHandler	8	static
+ds3231.c:71:6:ds3231_get_temperature	8	static
+ds3231.c:80:6:ds3231_set_time	16	static
+ds3231.c:90:6:ds3231_set_date	24	static
+ds3231.c:102:6:ds3231_rtc_get_time	16	static

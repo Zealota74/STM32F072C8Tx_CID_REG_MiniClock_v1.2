@@ -1,0 +1,5 @@
+sw_spi.v2.c:119:6:sw_spi_hw_init	16	static
+sw_spi.v2.c:163:6:sw_spi_hw_send_buff	24	static
+sw_spi.v2.c:178:6:sw_spi_hw_send_buff8	16	static
+sw_spi.v2.c:187:6:sw_spi_hw_send_buff16	16	static
+sw_spi.v2.c:199:10:sw_spi_hw_write_read	16	static

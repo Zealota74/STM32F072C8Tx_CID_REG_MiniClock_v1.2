@@ -1,0 +1,5 @@
+sw_i2c_eeprom.c:22:6:at24cxx_test	8	static
+sw_i2c_eeprom.c:32:6:at24cxx_write_byte	8	static
+sw_i2c_eeprom.c:40:6:at24cxx_write_page	8	static
+sw_i2c_eeprom.c:49:9:at24cxx_read_byte	8	static
+sw_i2c_eeprom.c:60:7:at24cxx_read_page	8	static

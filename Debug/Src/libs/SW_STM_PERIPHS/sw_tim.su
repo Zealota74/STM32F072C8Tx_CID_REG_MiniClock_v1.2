@@ -1,0 +1,2 @@
+sw_tim.c:15:6:sw_tim7_init	0	static
+sw_tim.c:28:6:nvic_priority	8	static

@@ -1,0 +1,4 @@
+sw_osd_module_BRIGHT.c:36:13:osd_bright_display_number	48	static
+sw_osd_module_BRIGHT.c:27:6:osd_bright_text_param	16	static
+sw_osd_module_BRIGHT.c:54:6:osd_bright_display_plus	16	static
+sw_osd_module_BRIGHT.c:66:6:osd_bright_display_minus	16	static

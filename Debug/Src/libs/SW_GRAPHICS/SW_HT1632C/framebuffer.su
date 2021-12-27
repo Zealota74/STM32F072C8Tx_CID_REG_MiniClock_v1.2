@@ -1,0 +1,2 @@
+framebuffer.c:33:6:graphic_set_pixel_RAM	32	static
+framebuffer.c:54:6:graphic_clear_screen	16	static

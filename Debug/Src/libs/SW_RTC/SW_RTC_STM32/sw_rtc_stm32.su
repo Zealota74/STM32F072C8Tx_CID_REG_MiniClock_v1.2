@@ -1,0 +1,11 @@
+sw_rtc_stm32.c:47:13:STM32F051_Rtc_init_on	0	static
+sw_rtc_stm32.c:55:13:STM32F051_Rtc_protect_off	0	static
+sw_rtc_stm32.c:60:13:STM32F051_Rtc_protect_on	0	static
+sw_rtc_stm32.c:16:6:STM32F051_rtc_calib	0	static
+sw_rtc_stm32.c:66:6:STM32F051_Rtc_Clock_Config	8	static
+sw_rtc_stm32.c:99:10:STM32F051_Rtc_Config	16	static
+sw_rtc_stm32.c:140:6:STM32F051_Rtc_Get_Time	16	static
+sw_rtc_stm32.c:152:6:STM32F051_Rtc_Get_Date	16	static
+sw_rtc_stm32.c:168:6:STM32F051_Rtc_Set_Time	16	static
+sw_rtc_stm32.c:183:6:STM32F051_Rtc_Set_Date	24	static
+sw_rtc_stm32.c:198:6:RTC_IRQHandler	0	static

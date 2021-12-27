@@ -1,0 +1,4 @@
+graphic.c:19:6:graphic_draw_fastH_line_RAM	40	static
+graphic.c:27:6:graphic_draw_rectangle_RAM	48	static
+graphic.c:36:6:graphic_draw_V_line_RAM	40	static
+graphic.c:44:13:graphic_clear_screen	16	static

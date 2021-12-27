@@ -1,0 +1,5 @@
+keyboard_v4.c:15:10:return_keyboard	0	static
+keyboard_v4.c:21:6:register_keyboard_event_callback	0	static
+keyboard_v4.c:26:6:sw_keyboard_init	8	static
+keyboard_v4.c:102:6:sw_keyboard_manage	12	static
+keyboard_v4.c:159:6:SW_KEYBOARD_EVENT	8	static

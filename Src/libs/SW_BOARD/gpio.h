@@ -1,0 +1,56 @@
+/*
+ * gpio.h
+ *
+ *  Created on: 06.07.2017
+ *      Author: simon
+ */
+
+#ifndef LIBS_SW_GPIO_GPIO_H_
+#define LIBS_SW_GPIO_GPIO_H_
+
+
+#include "sw_STM32F072C8Tx_mini_clock.h"
+
+extern void gpio_pin_cfg( GPIO_TypeDef * const port, T_GPIO_PIN pin,
+						  T_GPIO_MODE mode);
+extern void gpio_pin_LO( GPIO_TypeDef * const port, T_GPIO_PIN pin );
+extern void gpio_pin_HI( GPIO_TypeDef * const port, T_GPIO_PIN pin );
+extern void gpio_pin_XOR( GPIO_TypeDef * const port, T_GPIO_PIN pin );
+extern void RCC_gpio_init( void );
+extern void gpio_pin_IMPULSES( GPIO_TypeDef * const port, T_GPIO_PIN pin, uint8_t num );
+
+static inline uint8_t gpio_pin_READ( GPIO_TypeDef * const port, T_GPIO_PIN pin ) {
+//	if ( (port->IDR & pin) ) return 1;
+	if ( !(port->IDR & pin) ) return 1;
+	else return 0;
+}
+
+
+// BitBanging
+enum { SRAM_BB_REGION_START = 0x20000000 };
+enum { SRAM_BB_REGION_END = 0x200fffff };
+enum { SRAM_BB_ALIAS = 0x22000000 };
+enum { PERIPH_BB_REGION_START = 0x40000000 };
+enum { PERIPH_BB_REGION_END = 0x400fffff };
+enum { PERIPH_BB_ALIAS = 0x42000000 };
+#define SRAM_ADR_COND(adres) ( (uint32_t)&adres >= SRAM_BB_REGION_START && (uint32_t)&adres <= SRAM_BB_REGION_END )
+#define PERIPH_ADR_COND(adres) ( (uint32_t)&adres >= PERIPH_BB_REGION_START && (uint32_t)&adres <= PERIPH_BB_REGION_END )
+#define BB_SRAM2(adres, bit)( SRAM_BB_ALIAS + ((uint32_t)&adres - SRAM_BB_REGION_START)*32u + (uint32_t)(bit*4u) )
+#define BB_PERIPH(adres, bit)( PERIPH_BB_ALIAS + ((uint32_t)&adres - PERIPH_BB_REGION_START)*32u + (uint32_t)(__builtin_ctz(bit))*4u)
+/* bit - bit mask, not bit position! */
+#define BB(adres, bit) *(__IO uint32_t *)( SRAM_ADR_COND(adres) ? BB_SRAM2(adres, bit) : \
+( PERIPH_ADR_COND(adres) ? BB_PERIPH(adres, bit) : 0 ))
+#define BB_SRAM(adres, bit) *(__IO uint32_t *)BB_SRAM2(adres, bit)
+
+
+#define IN_PIN  ((uint32_t)0 )											// Wejście
+#define OUT_PIN ((uint32_t)GPIO_MODER_MODER0_0)							// Wyjście
+#define ALT_PIN ((uint32_t)GPIO_MODER_MODER0_1)							// Alternatywne
+#define ANA_PIN ((uint32_t)GPIO_MODER_MODER0_1|GPIO_MODER_MODER0_0)		// Analogowe
+//	#define IN_PIN  ((uint32_t)0 )	// Wejście
+//	#define OUT_PIN ((uint32_t)1 )	// Wyjście
+//	#define ALT_PIN ((uint32_t)2 )	// Alternatywne
+//	#define OUT_PIN ((uint32_t)3 )	// Analogowe
+
+
+#endif /* LIBS_SW_GPIO_GPIO_H_ */

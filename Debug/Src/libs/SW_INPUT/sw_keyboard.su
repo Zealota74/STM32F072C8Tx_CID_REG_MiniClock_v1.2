@@ -1,0 +1,3 @@
+sw_keyboard.c:198:10:keyboard_ptr	0	static
+sw_keyboard.c:203:6:sw_keyboard_init	8	static
+sw_keyboard.c:210:6:SW_KEYBOARD_EVENT	24	static

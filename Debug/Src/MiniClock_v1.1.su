@@ -1,0 +1,6 @@
+core_cm0.h:629:22:NVIC_EnableIRQ	16	static
+core_cm0.h:688:22:NVIC_SetPriority	24	static
+core_cm0.h:769:26:SysTick_Config	16	static
+MiniClock_v1.1.c:26:6:sw_tim2_init	8	static
+MiniClock_v1.1.c:39:5:main	8	static
+MiniClock_v1.1.c:84:6:TIM2_IRQHandler	8	static

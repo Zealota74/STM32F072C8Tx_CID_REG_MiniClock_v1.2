@@ -1,0 +1,7 @@
+sw_i2c.c:101:6:I2C1_ER_IRQHandler	0	static
+sw_i2c.c:149:6:sw_i2c_init	16	static
+sw_i2c.c:157:6:DMA1_Channel6_IRQHandler	0	static
+sw_i2c.c:168:6:DMA1_Channel7_IRQHandler	0	static
+sw_i2c.c:180:6:sw_i2c_dma_send_buff	12	static
+sw_i2c.c:202:6:sw_i2c_dma_get_buff	32	static
+sw_i2c.c:227:6:sw_i2c_test_slave	16	static

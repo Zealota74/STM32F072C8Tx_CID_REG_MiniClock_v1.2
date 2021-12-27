@@ -1,0 +1,7 @@
+gfx.c:17:6:graphic_draw_H_line_RAM	32	static
+gfx.c:34:6:graphic_draw_V_line_RAM	32	static
+gfx.c:52:6:graphic_fill_rectangle_RAM	40	static
+gfx.c:61:6:graphic_draw_rectangle_RAM	40	static
+gfx.c:72:6:graphic_fill_circle	72	static
+gfx.c:111:6:graphic_color_test	48	static
+gfx.c:154:6:graphic_floatingLine_test	24	static

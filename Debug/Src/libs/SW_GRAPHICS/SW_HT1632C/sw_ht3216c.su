@@ -1,0 +1,8 @@
+sw_ht3216c.c:30:13:HT1632C_command	8	static
+sw_ht3216c.c:104:6:EXTI4_15_IRQHandler	16	static
+sw_ht3216c.c:170:6:HT1632C_init	16	static
+sw_ht3216c.c:191:13:HT1632C_brightness	8	static
+sw_ht3216c.c:198:6:HT1632C_led_on	8	static
+sw_ht3216c.c:201:6:HT1632C_led_off	8	static
+sw_ht3216c.c:208:6:register_scroll_event_callback	0	static
+sw_ht3216c.c:214:6:SW_SCROLL_EVENT	8	static
