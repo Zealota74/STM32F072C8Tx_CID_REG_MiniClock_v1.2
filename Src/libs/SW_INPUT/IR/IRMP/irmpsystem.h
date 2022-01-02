@@ -144,7 +144,7 @@ typedef unsigned short                  uint16_t;
 #  include "../../SW_BOARD/gpio.h"
 #  include "stm32f3xx.h"
 #elif defined(ARM_STM32F0XX)
-#  include "../../../SW_BOARD/gpio.h"
+#  include "gpio.h"
 #  define PROGMEM
 #  define memcpy_P                      memcpy
 #elif defined(ARM_STM32F1XX)

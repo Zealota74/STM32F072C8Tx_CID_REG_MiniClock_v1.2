@@ -1,4 +1,5 @@
-sw_osd_module_RTC.c:43:13:osd_rtc_puts_int_RAM.constprop	72	static
-sw_osd_module_RTC.c:170:6:osd_display_time	32	static
-sw_osd_module_RTC.c:177:6:osd_display_date	16	static
-sw_osd_module_RTC.c:187:6:osd_rtc_fonts_param	40	static
+sw_osd_module_RTC.c:41:13:osd_rtc_puts_int_RAM.constprop	72	static
+sw_osd_module_RTC.c:137:6:osd_rtc_fonts_param	40	static
+sw_osd_module_RTC.c:189:6:osd_rtc_display_time	32	static
+sw_osd_module_RTC.c:196:6:osd_rtc_display_date	16	static
+sw_osd_module_RTC.c:203:6:osd_rtc_display_setTime	40	static

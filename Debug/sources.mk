@@ -21,18 +21,19 @@ OBJCOPY_BIN :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 Src \
+Src/libs/STM_PERIPHS \
 Src/libs/SW_BOARD \
 Src/libs/SW_GRAPHICS/SW_FONTS \
 Src/libs/SW_GRAPHICS/SW_HT1632C \
 Src/libs/SW_GRAPHICS/SW_OSD \
 Src/libs/SW_GRAPHICS \
-Src/libs/SW_INPUT/SW_IR/IRMP \
-Src/libs/SW_INPUT/SW_IR \
+Src/libs/SW_INPUT/IR/IRMP \
+Src/libs/SW_INPUT/IR \
+Src/libs/SW_INPUT/KEYBOARD \
 Src/libs/SW_INPUT \
 Src/libs/SW_RTC/SW_RTC_DS3231 \
 Src/libs/SW_RTC/SW_RTC_STM32 \
 Src/libs/SW_RTC \
-Src/libs/SW_STM_PERIPHS \
 Src/libs/SW_TIMERS \
 startup \
 

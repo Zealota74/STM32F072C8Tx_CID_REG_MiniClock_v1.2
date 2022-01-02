@@ -52,6 +52,9 @@ typedef struct {
 //	uint32_t fontColor;
 //} T_CLOCK;
 
+#define SET_TO_SHOW		0
+#define SHOW_TO_SET		1
+
 extern T_DATETIME	SetDateTime;
 extern T_DATETIME	ShowDateTime;
 
@@ -68,6 +71,6 @@ void rtc_get_date_time(void);
 void SW_DATETIME_EVENT(void);
 void register_datetime_event_callback( void (*callback)(void) );
 
-void copy_structures ( T_DATETIME *source, T_DATETIME *dest );
+extern void Rtc_copy_structures( uint8_t direction );
 
 #endif /* LIBS_RTC_MANAGE_H_ */

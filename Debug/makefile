@@ -11,18 +11,19 @@ RM := rm -rf
 -include sources.mk
 -include startup/subdir.mk
 -include Src/libs/SW_TIMERS/subdir.mk
--include Src/libs/SW_STM_PERIPHS/subdir.mk
 -include Src/libs/SW_RTC/SW_RTC_STM32/subdir.mk
 -include Src/libs/SW_RTC/SW_RTC_DS3231/subdir.mk
 -include Src/libs/SW_RTC/subdir.mk
--include Src/libs/SW_INPUT/SW_IR/IRMP/subdir.mk
--include Src/libs/SW_INPUT/SW_IR/subdir.mk
+-include Src/libs/SW_INPUT/KEYBOARD/subdir.mk
+-include Src/libs/SW_INPUT/IR/IRMP/subdir.mk
+-include Src/libs/SW_INPUT/IR/subdir.mk
 -include Src/libs/SW_INPUT/subdir.mk
 -include Src/libs/SW_GRAPHICS/SW_OSD/subdir.mk
 -include Src/libs/SW_GRAPHICS/SW_HT1632C/subdir.mk
 -include Src/libs/SW_GRAPHICS/SW_FONTS/subdir.mk
 -include Src/libs/SW_GRAPHICS/subdir.mk
 -include Src/libs/SW_BOARD/subdir.mk
+-include Src/libs/STM_PERIPHS/subdir.mk
 -include Src/subdir.mk
 -include objects.mk
 

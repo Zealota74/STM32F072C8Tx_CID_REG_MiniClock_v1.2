@@ -34,22 +34,26 @@
 
 extern uint8_t osdDisplayContant;
 
-void osd_manage_screens( void );
-void osd_bright_display_minus( void );
-void osd_bright_display_plus( void );
-
 void osd_init( void );
 void osd_keyboard_manage( void );
 void osd_ir_manage( void );
 
+void osd_manage_screens( void );
+
+//---------------- OSD bright module ---------------------
+void osd_bright_text_param( void );
+void osd_bright_display_minus( void );
+void osd_bright_display_plus( void );
+
+//---------------- OSD time-date module ------------------
+void osd_rtc_fonts_param( FONT_INFO * timeFont, FONT_INFO * dateFont, uint8_t displaySeconds );
+void osd_rtc_display_time( void );
+void osd_rtc_display_date( void );
+void osd_rtc_display_setTime( void );
 //void osd_rtc_updateTime( T_DISPLAY * buffer, T_COLOR color );
 
-void osd_rtc_fonts_param( FONT_INFO * timeFont, FONT_INFO * dateFont, uint8_t displaySeconds );
-void osd_bright_text_param( void );
 
-void osd_display_time( void );
-void osd_display_date( void );
-
+//---------------- OSD IR module -------------------------
 void osd_display_ir_learn( void );
 
 

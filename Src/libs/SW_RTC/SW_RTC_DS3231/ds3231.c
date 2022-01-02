@@ -8,8 +8,8 @@
 #include "sw_mcu_conf.h"
 #include "sw_hal_conf.h"
 
+#include "gpio.h"
 
-#include "../../SW_BOARD/gpio.h"
 #include "../sw_i2c.h"
 //#include "../../SW_GRAPHICS/SW_HT1632C/framebuffer.h"
 //#include "../../SW_GRAPHICS/fonts_common.h"

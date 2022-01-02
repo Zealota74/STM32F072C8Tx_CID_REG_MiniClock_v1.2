@@ -9,7 +9,9 @@
 #define LIBS_SW_GPIO_GPIO_H_
 
 
-#include "sw_STM32F072C8Tx_mini_clock.h"
+#include "gpio_defs.h"
+
+
 
 extern void gpio_pin_cfg( GPIO_TypeDef * const port, T_GPIO_PIN pin,
 						  T_GPIO_MODE mode);

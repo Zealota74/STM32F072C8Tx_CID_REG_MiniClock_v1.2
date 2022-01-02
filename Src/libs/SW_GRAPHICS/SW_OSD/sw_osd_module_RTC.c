@@ -5,11 +5,9 @@
  *      Author: simon
  */
 
-#include <string.h>
-
 #include "sw_mcu_conf.h"
+#include "gpio.h"
 
-#include "../../SW_BOARD/gpio.h"
 #include "../../SW_BOARD/sw_led_blink_debug.h"
 
 #include "../../SW_GRAPHICS/SW_HT1632C/sw_ht3216c.h"
@@ -136,7 +134,19 @@ static uint8_t osd_rtc_date_params( FONT_INFO * digitsFont, uint8_t align, uint8
 /********************************************************************************************/
 
 /********************************************************************************************/
-static void osd_rtc_display_time( T_DISPLAY * buffer, uint8_t withSeconds ) {
+void osd_rtc_fonts_param( FONT_INFO * timeFont, FONT_INFO * dateFont, uint8_t displaySeconds ) {
+	osd_rtc_string_init();
+
+	uint8_t check;
+	check = osd_rtc_time_params( timeFont, ALIGN_CTOP, 0, displaySeconds );
+
+	if ( check == SCREEN_TO_SMALL )	while(1) {}
+	check = osd_rtc_date_params( dateFont, ALIGN_LTOP, 0 );
+}
+/********************************************************************************************/
+
+/********************************************************************************************/
+static void osd_rtc_draw_time( T_DISPLAY * buffer, uint8_t withSeconds ) {
 	static uint8_t cnt;
 	T_COLOR delimColor = colorClock;
 
@@ -156,7 +166,7 @@ static void osd_rtc_display_time( T_DISPLAY * buffer, uint8_t withSeconds ) {
 							  colorClock, BlackColor, &GammaRGB );
 	}
 }
-static void osd_rtc_display_date( T_DISPLAY * buffer, T_DATETIME *dateTime ) {
+static void osd_rtc_draw_date( T_DISPLAY * buffer, T_DATETIME *dateTime ) {
 	osd_rtc_puts_int_RAM( buffer, &TextYEAR, dateTime->year + 2000,
 						  FONTx1, colorClock, BlackColor, &GammaRGB );
 	osd_rtc_puts_int_RAM( buffer, &TextMONTH, dateTime->month, FONTx1,
@@ -164,50 +174,44 @@ static void osd_rtc_display_date( T_DISPLAY * buffer, T_DATETIME *dateTime ) {
 	osd_rtc_puts_int_RAM( buffer, &TextDAY, dateTime->day, FONTx1,
 						  colorClock, BlackColor, &GammaRGB );
 }
+static void osd_rtc_draw_setTime( T_DISPLAY * buffer1, T_DISPLAY * buffer2, T_COLOR color ) {
+	Rtc_copy_structures( SHOW_TO_SET );
+
+	osd_rtc_puts_int_RAM( buffer2, &TextHH, SetDateTime.hh, FONTx1, color, BlackColor, &GammaRGB );
+	graphic_puts_RAM( buffer1, &Delim1, FONTx1, color, BlackColor, &GammaRGB );
+	osd_rtc_puts_int_RAM( buffer2, &TextMM, SetDateTime.mm, FONTx1, color, BlackColor, &GammaRGB );
+	graphic_puts_RAM( buffer2, &Delim2, FONTx1, color, BlackColor, &GammaRGB );
+	osd_rtc_puts_int_RAM( buffer2, &TextSS, SetDateTime.ss, FONTx1, color, BlackColor, &GammaRGB );
+}
 /********************************************************************************************/
 
 /************************************ Public functions **************************************/
-void osd_display_time(void) {
+void osd_rtc_display_time(void) {
 	T_DISPLAY * nonActiveBuffer = fb_get_noActive_buffer(buffer1);
 
 	fb_clear_screen( nonActiveBuffer );
-	osd_rtc_display_time( nonActiveBuffer, WITHOUT_SEC );
+	osd_rtc_draw_time( nonActiveBuffer, WITHOUT_SEC );
 	fb_buffer_is_ready(buffer1);
 }
-void osd_display_date(void) {
+void osd_rtc_display_date(void) {
 	T_DISPLAY * nonActiveBuffer = fb_get_noActive_buffer(buffer1);
 
 	fb_clear_screen( nonActiveBuffer );
-	osd_rtc_display_date( nonActiveBuffer, &ShowDateTime );
+	osd_rtc_draw_date( nonActiveBuffer, &ShowDateTime );
 	fb_buffer_is_ready(buffer1);
 }
-/********************************************************************************************/
+void osd_rtc_display_setTime(void) {
+	T_DISPLAY * nonActiveBuffer1 = fb_get_noActive_buffer(buffer1);
+	T_DISPLAY * nonActiveBuffer2 = fb_get_noActive_buffer(buffer2);
 
-/********************************************************************************************/
-void osd_rtc_fonts_param( FONT_INFO * timeFont, FONT_INFO * dateFont, uint8_t displaySeconds ) {
-	osd_rtc_string_init();
-
-	uint8_t check;
-	check = osd_rtc_time_params( timeFont, ALIGN_CTOP, 0, displaySeconds );
-
-	if ( check == SCREEN_TO_SMALL )	while(1) {}
-	check = osd_rtc_date_params( dateFont, ALIGN_LTOP, 0 );
+	fb_clear_screen( nonActiveBuffer1 );
+	fb_clear_screen( nonActiveBuffer2 );
+	osd_rtc_draw_setTime( nonActiveBuffer1, nonActiveBuffer2, colorClock );
+	fb_buffer_is_ready(buffer1);
+	fb_buffer_is_ready(buffer2);
 }
 /********************************************************************************************/
 
+//void(*callback)(void);
 
-//void osd_rtc_updateTime( T_DISPLAY * buffer, T_COLOR color ) {
-//	osd_rtc_puts_int_RAM( buffer, &TextHH, ShowDateTime.hh, FONTx1, color, BlackColor, &GammaRGB );
-//	graphic_puts_RAM( buffer, &Delim1, FONTx1, color, BlackColor, &GammaRGB );
-//	osd_rtc_puts_int_RAM( buffer, &TextMM, ShowDateTime.mm, FONTx1, color, BlackColor, &GammaRGB );
-//	graphic_puts_RAM( buffer, &Delim2, FONTx1, color, BlackColor, &GammaRGB );
-//	osd_rtc_puts_int_RAM( buffer, &TextSS, ShowDateTime.ss, FONTx1, color, BlackColor, &GammaRGB );
-//}
-///********************************************************************************************/
-//
-///********************************************************************************************/
-//void osd_setTime_text( T_DISPLAY * buffer, uint8_t withSeconds, FONT_INFO * font ) {
-//
-//}
-///********************************************************************************************/
 

@@ -8,6 +8,7 @@
 #ifndef SW_LED_BLINK_H_
 #define SW_LED_BLINK_H_
 
+#include "sw_STM32F072C8Tx_mini_clock.h"
 
 
 #ifdef NUCLEO_STM32F303RE

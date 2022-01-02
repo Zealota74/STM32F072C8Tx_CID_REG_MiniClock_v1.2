@@ -76,6 +76,13 @@ typedef struct {
 	float32_t  gammaR, gammaG, gammaB;
 } T_GAMMA;
 
+typedef struct {
+	const T_DISPLAY * Buff;
+	const T_DISPLAY * Back_buff;
+	T_DISPLAY		* ActualBuffer;
+	uint8_t syncFlag;
+} T_FB;
+
 enum {
 	buffer1, buffer2
 };

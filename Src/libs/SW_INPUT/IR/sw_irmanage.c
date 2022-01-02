@@ -17,8 +17,8 @@
 #include "../../SW_TIMERS/sw_soft_timers.h"
 
 
-static uint16_t  irDecoded = NO_IR_CODE;
-static uint16_t  globalIrAddress = IR_SIRC_ADDR;
+static uint16_t  irDecoded 			= NO_IR_CODE;
+static uint16_t  globalIrAddress 	= IR_SIRC_ADDR;
 
 static IRMP_DATA irmpData;
 

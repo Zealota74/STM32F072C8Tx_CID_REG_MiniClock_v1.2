@@ -6,21 +6,27 @@
  */
 
 #include "sw_mcu_conf.h"
+#include "gpio.h"
 
-#include "../SW_BOARD/gpio.h"
-#include "../SW_BOARD/sw_led_blink_debug.h"
-#include "../SW_TIMERS/sw_soft_timers.h"
+#include "../../SW_BOARD/sw_led_blink_debug.h"
+#include "../../SW_TIMERS/sw_soft_timers.h"
 
 
-#include "sw_keyboard.h"
+#include "keyboard.h"
 
-void osd_keyboard_manage( void );
+
+enum {
+	stateFALL = 1, stateRISE = 2, stateLOW = 3, stateHIGH = 4
+};
+enum {
+	keyRELEASED = 0, keyPRESSED = 1
+};
 
 // ---------------------- Variables and constants -----------------------
 static const T_KEYB_OUT KeysTab[ NUM_KEYS ] = {
-	{ BTN1_PORT, BTN1_PIN, osd_keyboard_manage, {SHORT_PRESS, 0} },
-	{ BTN2_PORT, BTN2_PIN, 0, {0, 0} },
-	{ BTN3_PORT, BTN3_PIN, osd_keyboard_manage, {SHORT_PRESS, 0} }
+	{ BTN1_PORT, BTN1_PIN, input_keyboard_proc, {SHORT_PRESS, 0} },
+	{ BTN2_PORT, BTN2_PIN, input_keyboard_proc, {VLONG_PRESS, 0} },
+	{ BTN3_PORT, BTN3_PIN, input_keyboard_proc, {SHORT_PRESS, 0} }
 };
 
 static KEYB_t  		keyboard;
@@ -87,7 +93,7 @@ static KEY_EVENT_t INLINE analyze_state_low(void) {
 				keyAction 	  = action_check;
 				debounceTimer = SHORT_MAX_TIME;
 			}
-			gpio_pin_IMPULSES( DEBUG_PORT1, DEBUG_PIN1, 1 );
+//			gpio_pin_IMPULSES( DEBUG_PORT1, DEBUG_PIN1, 1 );
 			break;
 		case action_check:
 			if ( debounceTimer == 0 ) {
@@ -95,7 +101,7 @@ static KEY_EVENT_t INLINE analyze_state_low(void) {
 				debounceTimer = MEDIUM_MAX_TIME;
 				repeatCounter = 0;
 			}
-			gpio_pin_IMPULSES( DEBUG_PORT1, DEBUG_PIN1, 2 );
+//			gpio_pin_IMPULSES( DEBUG_PORT1, DEBUG_PIN1, 2 );
 			break;
 		case action_repeat:
 			if ( debounceTimer == 0 ) {
@@ -107,7 +113,7 @@ static KEY_EVENT_t INLINE analyze_state_low(void) {
 					keyEvent = KEY_REPEAT;
 				}
 			}
-			gpio_pin_IMPULSES( DEBUG_PORT1, DEBUG_PIN1, 3 );
+//			gpio_pin_IMPULSES( DEBUG_PORT1, DEBUG_PIN1, 3 );
 			break;
 		default:break;
 	}
@@ -140,7 +146,7 @@ static KEY_EVENT_t INLINE analyze_state_high(void) {
 				}
 				keyAction = action_idle;
 			}
-			gpio_pin_IMPULSES( DEBUG_PORT0, DEBUG_PIN0, 4 );
+//			gpio_pin_IMPULSES( DEBUG_PORT0, DEBUG_PIN0, 4 );
 			break;
 		case action_repeat:
 			if ( debounceTimer == 0 ) {
@@ -150,7 +156,7 @@ static KEY_EVENT_t INLINE analyze_state_high(void) {
 				speedPressCounter = 0;
 				keyAction = action_idle;
 			}
-			gpio_pin_IMPULSES( DEBUG_PORT0, DEBUG_PIN0, 5 );
+//			gpio_pin_IMPULSES( DEBUG_PORT0, DEBUG_PIN0, 5 );
 			break;
 		default: break;
 	}

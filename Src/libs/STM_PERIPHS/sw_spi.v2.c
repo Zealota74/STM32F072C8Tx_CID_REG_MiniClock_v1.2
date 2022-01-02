@@ -5,7 +5,8 @@
  *      Author: simon
  */
 #include "sw_mcu_conf.h"
-#include "../SW_BOARD/gpio.h"
+#include "gpio.h"
+
 #include "../SW_TIMERS/sw_soft_timers.h"
 
 #include "sw_spi.v2.h"

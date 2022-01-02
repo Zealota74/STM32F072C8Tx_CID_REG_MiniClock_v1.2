@@ -10,12 +10,8 @@ Src/libs/SW_GRAPHICS/SW_OSD/sw_osd.o: \
  D:/00_Programowanie/01_Workspaces/04_CubeIDE_Workspace_1.6.1/STM32F072C8Tx_CID_REG_MiniClock_v1.2/Drivers/CMSIS/Include/core_cmFunc.h \
  D:/00_Programowanie/01_Workspaces/04_CubeIDE_Workspace_1.6.1/STM32F072C8Tx_CID_REG_MiniClock_v1.2/Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h \
  D:/00_Programowanie/01_Workspaces/04_CubeIDE_Workspace_1.6.1/STM32F072C8Tx_CID_REG_MiniClock_v1.2/Inc/sw_hal_conf.h \
- ../Src/libs/SW_GRAPHICS/SW_OSD/../../SW_INPUT/sw_keyboard.h \
- ../Src/libs/SW_GRAPHICS/SW_OSD/../../SW_INPUT/../SW_BOARD/gpio.h \
- ../Src/libs/SW_GRAPHICS/SW_OSD/../../SW_INPUT/../SW_BOARD/sw_STM32F072C8Tx_mini_clock.h \
- ../Src/libs/SW_GRAPHICS/SW_OSD/../../SW_INPUT/sw_keyboard_keys.h \
  ../Src/libs/SW_GRAPHICS/SW_OSD/../../SW_TIMERS/sw_soft_timers.h \
- ../Src/libs/SW_GRAPHICS/SW_OSD/../../SW_INPUT/SW_IR/sw_irmanage.h \
+ ../Src/libs/SW_GRAPHICS/SW_OSD/../../SW_INPUT/input.h \
  ../Src/libs/SW_GRAPHICS/SW_OSD/../fb.h \
  D:/00_Programowanie/01_Workspaces/04_CubeIDE_Workspace_1.6.1/STM32F072C8Tx_CID_REG_MiniClock_v1.2/Drivers/CMSIS/Include/arm_math.h \
  D:/00_Programowanie/01_Workspaces/04_CubeIDE_Workspace_1.6.1/STM32F072C8Tx_CID_REG_MiniClock_v1.2/Drivers/CMSIS/Include/core_cm0.h \
@@ -47,17 +43,9 @@ D:/00_Programowanie/01_Workspaces/04_CubeIDE_Workspace_1.6.1/STM32F072C8Tx_CID_R
 
 D:/00_Programowanie/01_Workspaces/04_CubeIDE_Workspace_1.6.1/STM32F072C8Tx_CID_REG_MiniClock_v1.2/Inc/sw_hal_conf.h:
 
-../Src/libs/SW_GRAPHICS/SW_OSD/../../SW_INPUT/sw_keyboard.h:
-
-../Src/libs/SW_GRAPHICS/SW_OSD/../../SW_INPUT/../SW_BOARD/gpio.h:
-
-../Src/libs/SW_GRAPHICS/SW_OSD/../../SW_INPUT/../SW_BOARD/sw_STM32F072C8Tx_mini_clock.h:
-
-../Src/libs/SW_GRAPHICS/SW_OSD/../../SW_INPUT/sw_keyboard_keys.h:
-
 ../Src/libs/SW_GRAPHICS/SW_OSD/../../SW_TIMERS/sw_soft_timers.h:
 
-../Src/libs/SW_GRAPHICS/SW_OSD/../../SW_INPUT/SW_IR/sw_irmanage.h:
+../Src/libs/SW_GRAPHICS/SW_OSD/../../SW_INPUT/input.h:
 
 ../Src/libs/SW_GRAPHICS/SW_OSD/../fb.h:
 

@@ -21,16 +21,23 @@ T_DATETIME	SetDateTime;
 T_DATETIME	ShowDateTime;
 /**************************************************************/
 
+
+
 static void ( *datetime_event_callback )( void );
 //static uint8_t 	rtcDatetimeFlag = 0;
 //static bool 	i2cRtcExist 	= FALSE;
 
 
-void copy_structures ( T_DATETIME *source, T_DATETIME *dest ) {
+void Rtc_copy_structures( uint8_t direction ) {
 //	memcpy( dest->bytes, source->bytes, sizeof(source));
-	dest->hh = source->hh;
-	dest->mm = source->mm;
-	dest->ss = source->ss;
+//	dest->hh = source->hh;
+//	dest->mm = source->mm;
+//	dest->ss = source->ss;
+	if (direction)
+		SetDateTime = ShowDateTime;
+	else
+		ShowDateTime = SetDateTime;
+
 }
 
 void Rtc_Get_Time( uint8_t *hh, uint8_t *mm, uint8_t *ss ) {

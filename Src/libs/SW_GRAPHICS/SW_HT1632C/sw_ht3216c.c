@@ -8,9 +8,10 @@
 #include "sw_mcu_conf.h"
 #include "sw_hal_conf.h"
 
-#include "../../SW_BOARD/gpio.h"
+#include "gpio.h"
+#include "sw_spi.v2.h"
+
 #include "../../SW_BOARD/sw_led_blink_debug.h"
-#include "../../SW_STM_PERIPHS/sw_spi.v2.h"
 
 #include "../fb.h"
 #include "sw_ht3216c.h"
@@ -192,7 +193,7 @@ void INLINE HT1632C_brightness( uint16_t brightness ) {
 	bright = brightness;
 	if ( bright < AUTO_BRIGHT ) {
 		brightness = gammaBright[ bright ];
-		HT1632C_command( HT1632C_SET_BRIGHT + ((brightness & 15) << 1) );
+//		HT1632C_command( HT1632C_SET_BRIGHT + ((brightness & 15) << 1) );
 	}
 }
 void HT1632C_led_on ( void ) {

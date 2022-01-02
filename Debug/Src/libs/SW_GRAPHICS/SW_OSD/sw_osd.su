@@ -1,6 +1,4 @@
 sw_osd.c:28:6:osd_init	8	static
-sw_osd.c:38:6:osd_keyboard_manage	8	static
-sw_osd.c:60:6:osd_manage_screens	16	static
-sw_osd.c:99:6:register_osd_event_callback	0	static
-sw_osd.c:102:6:SW_OSD_EVENT	8	static
-sw_osd.c:117:6:osd_ir_manage	8	static
+sw_osd.c:38:6:osd_manage_screens	16	static
+sw_osd.c:77:6:register_osd_event_callback	0	static
+sw_osd.c:80:6:SW_OSD_EVENT	8	static

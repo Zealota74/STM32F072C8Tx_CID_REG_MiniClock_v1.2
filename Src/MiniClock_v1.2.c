@@ -1,10 +1,11 @@
 #include "sw_mcu_conf.h"
 #include "sw_hal_conf.h"
 
-#include "libs/SW_BOARD/gpio.h"
 #include "libs/SW_BOARD/sw_led_blink_debug.h"
 
-#include "libs/SW_INPUT/sw_keyboard.h"
+#include "gpio.h"
+#include "libs/SW_INPUT/input.h"
+
 
 #include "libs/SW_GRAPHICS/SW_HT1632C/sw_ht3216c.h"
 #include "libs/SW_GRAPHICS/text.h"
@@ -12,10 +13,9 @@
 
 #include "libs/SW_TIMERS/sw_soft_timers.h"
 #include "libs/SW_RTC/sw_rtc_manage.h"
-#include "libs/SW_INPUT/SW_IR/sw_irmanage.h"
 
-#include "libs/SW_STM_PERIPHS/sw_spi.v2.h"
-#include "libs/SW_STM_PERIPHS/sw_tim.h"
+#include "sw_spi.v2.h"
+#include "sw_tim.h"
 
 #include "libs/SW_GRAPHICS/SW_OSD/sw_osd.h"
 
@@ -45,8 +45,7 @@ int main(void) {
 	RCC_gpio_init();
 	sw_led_debug_init();
 
-	sw_keyboard_init();
-//	sw_ir_init();
+	input_init();
 
 	HT1632C_init();
 	clock_init( FALSE );

@@ -56,7 +56,7 @@
 #  elif defined (ARM_STM32F4XX)
 #    define IRMP_PORT_RCC                       CONCAT(RCC_AHB1Periph_GPIO, IRMP_PORT_LETTER)
 #  elif defined (ARM_STM32F3XX) || defined (ARM_STM32F0XX)
-#	 include "../../../SW_BOARD/gpio.h"
+#	 include "gpio.h"
 # 	 undef	IRMP_PORT
 #	 define	IRMP_PORT							CONCAT( PORT, IRMP_PORT_LETTER )
 #    define IRMP_PORT_RCC                       CONCAT( RCC_AHB1Periph_GPIO, IRMP_PORT_LETTER )

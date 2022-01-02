@@ -1,7 +1,6 @@
-fb.c:48:12:fb_get_active_buffer	0	static
-fb.c:51:12:fb_get_active_buffer1	0	static
-fb.c:54:13:fb_get_noActive_buffer	0	static
-fb.c:62:6:fb_switch_buff	0	static
-fb.c:75:6:fb_buffer_is_ready	0	static
-fb.c:95:6:fb_clear_screen	8	static
-fb.c:100:6:fb_set_pixel_RAM	12	static
+fb.c:35:13:fb_get_active_buffer	0	static
+fb.c:38:13:fb_get_noActive_buffer	0	static
+fb.c:45:6:fb_switch_buff	0	static
+fb.c:57:6:fb_buffer_is_ready	0	static
+fb.c:62:6:fb_clear_screen	8	static
+fb.c:67:6:fb_set_pixel_RAM	12	static

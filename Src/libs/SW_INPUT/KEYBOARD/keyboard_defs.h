@@ -1,15 +1,12 @@
 /*
- * keyboard.h
+ * keyboard_defs.h
  *
- *  Created on: 12 sie 2021
+ *  Created on: 1 sty 2022
  *      Author: simon
  */
 
-#ifndef SRC_LIBS_KEYBOARD_H_
-#define SRC_LIBS_KEYBOARD_H_
-
-#include "../SW_BOARD/gpio.h"
-#include "sw_keyboard_keys.h"
+#ifndef LIBS_SW_INPUT_KEYBOARD_KEYBOARD_DEFS_H_
+#define LIBS_SW_INPUT_KEYBOARD_KEYBOARD_DEFS_H_
 
 // ------------------ Constant definitions -------------------
 #define TEST_KEYBOARD	0
@@ -57,14 +54,4 @@ typedef struct {
 // ----------------------------------------------------------
 
 
-// ----------------- public declarations --------------------
-extern void osd_bright_display_minus(void);
-extern void osd_bright_display_plus(void);
-
-
-extern void sw_keyboard_init(void);
-extern KEYB_t * keyboard_ptr(void);
-extern void SW_KEYBOARD_EVENT( void );
-// ---------------------------------------------------------
-
-#endif /* SRC_LIBS_KEYBOARD_H_ */
+#endif /* LIBS_SW_INPUT_KEYBOARD_KEYBOARD_DEFS_H_ */

@@ -6,12 +6,14 @@
  */
 
 #include "sw_mcu_conf.h"
-#include "../SW_BOARD/gpio.h"
+//#include "gpio.h"
+
+#include "../SW_BOARD/sw_led_blink_debug.h"
+
+//#include "../SW_INPUT/KEYBOARD/keyboard.h"
 
 #include "sw_soft_timers.h"
 
-#include "../SW_BOARD/sw_led_blink_debug.h"
-#include "../SW_INPUT/sw_keyboard.h"
 
 
 /**** Inicjujemy SysTick pod timery programowe *****/
@@ -43,7 +45,7 @@ void SysTick_Handler( void ) {
 
 	if (showMenuTimer == 0) {
 		showMenuTimer = 10;
-		SW_KEYBOARD_EVENT();
+		input_event();
 	}
 }
 /******************************************************************************/

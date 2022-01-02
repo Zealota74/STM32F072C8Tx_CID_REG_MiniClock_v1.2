@@ -8,8 +8,9 @@
 #ifndef LIBS_SW_STM_PERIPHS_SW_SPI_V2_H_
 #define LIBS_SW_STM_PERIPHS_SW_SPI_V2_H_
 
+#include <sw_spi_defs_v2.h>
+
 #include "sw_spi_irq_dma.h"
-#include "sw_spi_macros_v2.h"
 
 //#define SPI_DMA
 //#define SPI_IRQ

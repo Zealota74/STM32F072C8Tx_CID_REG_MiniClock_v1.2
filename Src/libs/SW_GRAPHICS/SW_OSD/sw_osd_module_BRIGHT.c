@@ -71,7 +71,7 @@ void osd_bright_display_minus( void ) {
 
 	T_DISPLAY * NoActiveBuffer = fb_get_noActive_buffer(buffer1);
 
-	fb_clear_screen	 ( NoActiveBuffer );
+	fb_clear_screen( NoActiveBuffer );
 	osd_bright_display_number( NoActiveBuffer, bright );
 	fb_buffer_is_ready(buffer1);
 }
